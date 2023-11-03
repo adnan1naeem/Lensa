@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Navigation from './src/Navigation';
+import * as Updates from 'expo-updates'
 
-export default function App() {
+const App = () => {
+  useEffect(() => {
+    onFetchUpdateAsync()
+  }, [])
+
+  async function onFetchUpdateAsync() {
+    try {
+      const update = await Updates.checkForUpdateAsync()
+      if (update.isAvailable) {
+        await Updates.fetchUpdateAsync()
+        await Updates.reloadAsync()
+      }
+    } catch (e) {
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <SafeAreaProvider>
+      <StatusBar barStyle="light-content" />
+      <Navigation />
+    </SafeAreaProvider>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App

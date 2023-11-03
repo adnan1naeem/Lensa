@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "generativeAi",
-    "slug": "generativeAi",
+    "slug": "genrativeai",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,30 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hsaleem.generativeAi"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.hsaleem.generativeAi"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "df886991-1ad2-49a1-91e2-d1e87ac1ba22"
+      }
+    },
+    "owner": "hsaleem",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/df886991-1ad2-49a1-91e2-d1e87ac1ba22"
     }
   }
 }
