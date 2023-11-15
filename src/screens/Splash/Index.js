@@ -18,7 +18,7 @@ const Index = ({ navigation }) => {
 
     React.useEffect(() => {
         const timer = setTimeout(async () => {
-            navigation.navigate("Welcome");
+            navigation.replace("Welcome");
         }, 5500);
         return () => clearTimeout(timer);
     }, []);

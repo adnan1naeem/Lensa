@@ -14,9 +14,30 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow generativeAi to access your photos.",
+          "savePhotosPermission": "Allow generativeAi to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.hsaleem.generativeAi"
+      "bundleIdentifier": "com.hsaleem.generativeAi",
+      "infoPlist": {
+        "NSCameraUsageDescription":
+          "Allow access to your camera so that you can upload a profile picture or submit photos to demonstrate positive actions you have taken in the app.",
+        "NSPhotoLibraryAddUsageDescription":
+          "Allow access to your camera so that you can upload a profile picture or submit photos to demonstrate positive actions you have taken in the app.",
+        "NSPhotoLibraryUsageDescription":
+          "Allow access to your photo library so that you can upload a profile picture or submit photos to demonstrate positive actions you have taken in the app.",
+        "NSLocationWhenInUseUsageDescription":
+          "generativeAi would like to use your location to show you actions available in your area and to validate actions you take in the app.",
+  
+      }
     },
     "android": {
       "adaptiveIcon": {

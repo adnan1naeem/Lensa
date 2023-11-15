@@ -6,7 +6,7 @@ import { TextStyle } from './ComponentsStyle'
 const CustomText = ({ title, textStyle }) => {
 
     return (
-        <Text style={[TextStyle.container, textStyle]}>{title}</Text>
+        <Text style={[TextStyle.container, textStyle, {}]}>{title}</Text>
     )
 }
 
